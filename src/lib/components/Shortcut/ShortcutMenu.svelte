@@ -10,7 +10,7 @@
 </script>
 
 <button
-	class="absolute -top-3 -right-1 p-3 rounded-full z-20 cursor-pointer hover:bg-base-300"
+	class="absolute top-0 right-0 px-2 rounded-md z-20 cursor-pointer hover:bg-base-100"
 	on:click|preventDefault={() => (isShortcutPopupOpen = true)}
 >
 	<MenuIcon />

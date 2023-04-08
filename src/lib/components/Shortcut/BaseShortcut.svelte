@@ -8,7 +8,7 @@
 </script>
 
 <button
-	class="relative flex justify-center min-h-[8rem] min-w-[8rem] rounded-lg bg-base-200 cursor-pointer"
+	class="relative flex justify-center min-h-[8rem] min-w-[8rem] rounded-lg bg-base-200 hover:bg-base-300 cursor-pointer transition-all"
 	on:click={onClick}
 	{...$$restProps}
 >
