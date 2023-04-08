@@ -1,0 +1,11 @@
+{
+	"shortcut": {
+		"input-icon": "Shortcut Icon",
+		"input-link": "Shortcut link",
+		"input-title": "Shortcut Title",
+		"remove": "Remove shortcut",
+		"save": "Save",
+		"title-add": "Add a new shortcut",
+		"title-edit": "Edit shortcut"
+	}
+}

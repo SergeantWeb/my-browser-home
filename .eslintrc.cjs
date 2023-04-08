@@ -1,5 +1,8 @@
 module.exports = {
 	root: true,
+	globals: {
+		App: 'writable'
+	},
 	parser: '@typescript-eslint/parser',
 	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
 	plugins: ['svelte3', '@typescript-eslint'],
@@ -10,7 +13,7 @@ module.exports = {
 	},
 	parserOptions: {
 		sourceType: 'module',
-		ecmaVersion: 2020
+		ecmaVersion: 'latest'
 	},
 	env: {
 		browser: true,

@@ -1,0 +1,11 @@
+{
+	"shortcut": {
+		"input-icon": "Icône du raccourci",
+		"input-link": "Lien du raccourci",
+		"input-title": "Titre du raccourci",
+		"remove": "Supprimer le raccourci",
+		"save": "Sauvegarder",
+		"title-add": "Ajouter un raccourci",
+		"title-edit": "Modifier un raccourci"
+	}
+}
