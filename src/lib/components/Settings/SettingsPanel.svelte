@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { _ } from '$lib/translations';
+	import { _, locales, loadTranslations } from "$lib/translations";
 	import { fly } from 'svelte/transition';
 	import config from '$lib/config';
 	import { settings } from '$lib/stores/persistent';
 	import { clickOutside } from '$lib/directives/ClickOutside';
 	import { isSettingsMenuOpen } from '$lib/stores/states';
 	import SettingsField from '$lib/components/Settings/SettingsField.svelte';
+
 </script>
 
 {#if $isSettingsMenuOpen}
@@ -32,6 +33,18 @@
 				options={config.iconProviders}
 				bind:value={$settings['favicon-provider']}
 			/>
+
+			<SettingsField
+				type="select"
+				name="lang"
+				title={$_('settings.lang')}
+				options={$locales}
+				bind:value={$settings['lang']}
+				on:change={() => {
+					loadTranslations($settings.lang)
+				}}
+			/>
+
 		</div>
 	</div>
 {/if}
