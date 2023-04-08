@@ -11,7 +11,7 @@
 </script>
 
 <BaseShortcut on:click={() => (isShortcutPopupOpen = true)}>
-	<AddIcon class="text-3xl" />
+	<AddIcon class="text-3xl m-auto" />
 </BaseShortcut>
 
 <ShortcutPopup {index} bind:isOpen={isShortcutPopupOpen} />

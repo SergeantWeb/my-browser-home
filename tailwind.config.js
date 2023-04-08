@@ -7,9 +7,9 @@ export default {
 			center: true
 		},
 		screens: {
-			tablet: '324px',
-			laptop: '532px',
-			desktop: '740px'
+			tablet: '285px',
+			laptop: '560px',
+			desktop: '830px'
 		}
 	},
 	plugins: [require('daisyui')]
