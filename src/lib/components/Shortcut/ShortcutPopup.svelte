@@ -17,7 +17,7 @@
 
 	const saveShortcut = () => {
 		// Add https:// to the link
-		if (link?.indexOf('http') !== 0) {
+		if (link?.length > 0 && link?.indexOf('http') !== 0) {
 			link = `https://${link}`;
 		}
 
@@ -28,7 +28,6 @@
 		if (typeof shortcut === 'undefined') {
 			$shortcuts.push(newShortcut as never);
 			$shortcuts = $shortcuts;
-			link = title = undefined;
 		} else {
 			$shortcuts[index] = newShortcut as never;
 		}

@@ -9,12 +9,12 @@
 	export let index = $shortcuts.length + 1;
 </script>
 
-{#if shortcut !== null}
+{#if shortcut && shortcut.link && shortcut.title}
 	<BaseShortcut>
 		<ShortcutMenu {shortcut} {index} />
 		<a
 			href={shortcut.link}
-			target={$settings['new-tab-shortcuts'] ? '_blank' : ''}
+			target={$settings && $settings['new-tab-shortcuts'] ? '_blank' : ''}
 			class="flex-1 flex flex-col items-center text-center gap-2 pt-4 w-full"
 		>
 			{#key $settings['favicon-provider']}

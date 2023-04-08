@@ -12,7 +12,7 @@
 	<div
 		class="fixed top-0 right-0 min-h-screen p-4 bg-base-200 z-40"
 		transition:fly={{ x: 200 }}
-		use:clickOutside
+		use:clickOutside={'#settings-trigger'}
 		on:click_outside={() => ($isSettingsMenuOpen = false)}
 	>
 		<div class="text-xl font-medium ml-2 mb-4">{$_('settings.title')}</div>
