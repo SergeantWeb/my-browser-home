@@ -10,7 +10,7 @@
 {#if shortcut !== null}
 	<BaseShortcut>
 		<ShortcutMenu {shortcut} {index} />
-		<a href={shortcut.link} class="flex flex-col items-center text-center gap-2 mt-auto w-full">
+		<a href={shortcut.link} target="_blank" class="flex flex-col items-center text-center gap-2 mt-auto w-full">
 			<img
 				src={shortcut.icon ??
 					`https://www.google.com/s2/favicons?sz=64&domain_url=${shortcut.link}`}

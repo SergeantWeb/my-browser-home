@@ -11,4 +11,6 @@ The icon is fetched from google favicon API.
 ### Firefox
 - Install [Custom New Tab Page](https://addons.mozilla.org/en-US/firefox/addon/custom-new-tab-page/) extension.
 - In `Manage Extension` > `Preferences`, add the following url : [`https://my-custom-browser-home.vercel.app/`](https://my-custom-browser-home.vercel.app/)
-- Check `Force links to open in the top frame`, then allow permissions and save the settings.
+- Click on `save` button to save the settings.
+
+Now you will see `My Browser Home` page when you open a new tab.
