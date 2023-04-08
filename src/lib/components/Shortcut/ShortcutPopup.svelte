@@ -5,11 +5,11 @@
 	import { shortcuts } from '$lib/stores/persistent';
 
 	export let isOpen = false;
-	export let shortcut: App.Shortcut = { title: '', link: '' };
+	export let shortcut: App.Shortcut = null;
 	export let index = $shortcuts.length + 1;
 
-	let title: string | undefined = shortcut?.title;
-	let link: string | undefined = shortcut?.link;
+	let title: string | null = shortcut?.title ?? null;
+	let link: string | null = shortcut?.link ?? null;
 
 	const closePopup = () => {
 		isOpen = false;
@@ -17,7 +17,7 @@
 
 	const saveShortcut = () => {
 		// Add https:// to the link
-		if (link?.length > 0 && link?.indexOf('http') !== 0) {
+		if (link && link.length > 0 && link.indexOf('http') !== 0) {
 			link = `https://${link}`;
 		}
 
@@ -85,7 +85,7 @@
 			</div>
 
 			<div class="modal-action mt-2">
-				{#if typeof shortcut !== 'undefined'}
+				{#if shortcut !== null}
 					<button class="btn btn-ghost text-error" on:click={removeShortcut}
 						>{$_('shortcut.remove')}</button
 					>

@@ -6,7 +6,7 @@ declare namespace App {
 		title: string;
 		link: string;
 		icon?: string;
-	};
+	} | null;
 }
 
 /* Unplugin-icons */
