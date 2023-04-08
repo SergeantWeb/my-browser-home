@@ -1,4 +1,9 @@
 {
+	"settings": {
+		"favicon-provider": "Favicon provider",
+		"new-tab-shortcuts": "Open shortcut in new tab",
+		"title": "Settings"
+	},
 	"shortcut": {
 		"input-icon": "Shortcut Icon",
 		"input-link": "Shortcut link",

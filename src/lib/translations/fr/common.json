@@ -1,4 +1,9 @@
 {
+	"settings": {
+		"favicon-provider": "Fournisseur de favicônes",
+		"new-tab-shortcuts": "Ouvrir les raccourcis dans un nouvel onglet",
+		"title": "Paramètres"
+	},
 	"shortcut": {
 		"input-icon": "Icône du raccourci",
 		"input-link": "Lien du raccourci",

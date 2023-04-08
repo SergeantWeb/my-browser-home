@@ -5,6 +5,7 @@ declare namespace App {
 	type Shortcut = {
 		title: string;
 		link: string;
+		icon?: string;
 	};
 }
 

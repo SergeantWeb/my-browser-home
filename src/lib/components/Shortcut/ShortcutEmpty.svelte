@@ -4,7 +4,6 @@
 	import ShortcutPopup from '$lib/components/Shortcut/ShortcutPopup.svelte';
 	import AddIcon from 'virtual:icons/ri/add-line';
 
-	export let shortcut: App.Shortcut;
 	export let index = $shortcuts.length + 1;
 
 	let isShortcutPopupOpen = false;

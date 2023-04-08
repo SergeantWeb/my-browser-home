@@ -5,11 +5,11 @@
 	import { shortcuts } from '$lib/stores/persistent';
 
 	export let isOpen = false;
-	export let shortcut: App.Shortcut;
+	export let shortcut: App.Shortcut = { title: '', link: '' };
 	export let index = $shortcuts.length + 1;
 
-	let title = shortcut?.title;
-	let link = shortcut?.link;
+	let title: string | undefined = shortcut?.title;
+	let link: string | undefined = shortcut?.link;
 
 	const closePopup = () => {
 		isOpen = false;
@@ -28,9 +28,9 @@
 		if (typeof shortcut === 'undefined') {
 			$shortcuts.push(newShortcut as never);
 			$shortcuts = $shortcuts;
-			link = title = undefined
+			link = title = undefined;
 		} else {
-			$shortcuts[index] = newShortcut;
+			$shortcuts[index] = newShortcut as never;
 		}
 
 		// Close popup
@@ -70,7 +70,7 @@
 					placeholder={$_('shortcut.input-title')}
 					class="input input-bordered w-full"
 					on:keydown={(e) => {
-						if(e.key === 'Enter') saveShortcut()
+						if (e.key === 'Enter') saveShortcut();
 					}}
 				/>
 				<input
@@ -79,7 +79,7 @@
 					placeholder={$_('shortcut.input-link')}
 					class="input input-bordered w-full"
 					on:keydown={(e) => {
-						if(e.key === 'Enter') saveShortcut()
+						if (e.key === 'Enter') saveShortcut();
 					}}
 				/>
 				<!-- @TODO <input type="text" placeholder={$_('shortcut.input-icon')} class="input input-bordered w-full" /> -->
