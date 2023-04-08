@@ -1,16 +1,17 @@
 {
-	"settings": {
-		"favicon-provider": "Fournisseur de favicônes",
-		"new-tab-shortcuts": "Ouvrir les raccourcis dans un nouvel onglet",
-		"title": "Paramètres"
-	},
-	"shortcut": {
-		"input-icon": "Icône du raccourci",
-		"input-link": "Lien du raccourci",
-		"input-title": "Titre du raccourci",
-		"remove": "Supprimer le raccourci",
-		"save": "Sauvegarder",
-		"title-add": "Ajouter un raccourci",
-		"title-edit": "Modifier un raccourci"
-	}
+  "settings": {
+    "favicon-provider": "Fournisseur de favicônes",
+    "lang": "Langue",
+    "new-tab-shortcuts": "Ouvrir les raccourcis dans un nouvel onglet",
+    "title": "Paramètres"
+  },
+  "shortcut": {
+    "input-icon": "Icône du raccourci",
+    "input-link": "Lien du raccourci",
+    "input-title": "Titre du raccourci",
+    "remove": "Supprimer le raccourci",
+    "save": "Sauvegarder",
+    "title-add": "Ajouter un raccourci",
+    "title-edit": "Modifier un raccourci"
+  }
 }
