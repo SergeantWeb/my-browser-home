@@ -41,3 +41,10 @@ Made with Sveltekit, data stored in localStorage, multilingual.
 Now you will see `My Browser Home` page when you open a new tab.
 
 - Additionally, you can set up the home page for new windows and startup page in the Firefox settings.
+
+### Google Chrome & other Chromium-based browsers
+
+- Install [New Tab Redirect](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna) extension.
+- In extension options, add [`https://my-custom-browser-home.vercel.app/`](https://my-custom-browser-home.vercel.app/) in `Redirect URL` and click on `save` button.
+
+Now you will see `My Browser Home` page when you open a new tab or a new window.
