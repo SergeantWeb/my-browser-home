@@ -1,23 +1,30 @@
 <script lang="ts">
 	import utils from '$lib/components/utils';
-	import { settings } from '$lib/stores/persistent';
-	import { shortcuts } from '$lib/stores/persistent';
+	import { settings, shortcuts } from '$lib/stores/persistent';
+	import { shortcutContextMenu } from '$lib/stores/states';
 	import BaseShortcut from './BaseShortcut.svelte';
-	import ShortcutMenu from '$lib/components/Shortcut/ShortcutMenu.svelte';
 
 	export let shortcut: App.Shortcut;
 	export let index = $shortcuts.length + 1;
+
+	const openContextMenu = (e: MouseEvent) => {
+		$shortcutContextMenu = {
+			position: { x: e.x, y: e.y },
+			shortcut,
+			shortcutIndex: index
+		};
+	};
 </script>
 
 {#if shortcut && shortcut.link && shortcut.title}
 	<BaseShortcut>
-		<ShortcutMenu {shortcut} {index} />
 		<a
 			href={shortcut.link}
-			target={$settings && $settings['new-tab-shortcuts'] ? '_blank' : ''}
+			target={$settings && $settings.openShortcutInNewTab ? '_blank' : ''}
 			class="flex-1 flex flex-col items-center text-center gap-2 pt-4 w-full"
+			on:contextmenu|preventDefault={openContextMenu}
 		>
-			{#key $settings['favicon-provider']}
+			{#key $settings.faviconProvider}
 				<img
 					src={shortcut.icon ?? utils.getFaviconUrl(shortcut.link)}
 					alt={shortcut.title}

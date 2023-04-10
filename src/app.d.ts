@@ -6,6 +6,20 @@ declare namespace App {
 		title: string;
 		link: string;
 		icon?: string;
+	};
+
+	type ShortcutEditPopup = {
+		shortcut: App.Shortcut;
+		shortcutIndex: number;
+	} | null;
+
+	type ShortcutContextMenu = {
+		position: {
+			x: number;
+			y: number;
+		};
+		shortcut: App.Shortcut | null;
+		shortcutIndex: number;
 	} | null;
 }
 

@@ -11,7 +11,7 @@
 
 	const onChange = () => {
 		dispatch('change');
-	}
+	};
 </script>
 
 <label class="flex items-center justify-between gap-4 p-2 w-full">

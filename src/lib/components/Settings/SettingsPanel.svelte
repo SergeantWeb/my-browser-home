@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { _, locales, loadTranslations } from "$lib/translations";
+	import { _, locales, loadTranslations } from '$lib/translations';
 	import { fly } from 'svelte/transition';
 	import config from '$lib/config';
 	import { settings } from '$lib/stores/persistent';
 	import { clickOutside } from '$lib/directives/ClickOutside';
 	import { isSettingsMenuOpen } from '$lib/stores/states';
 	import SettingsField from '$lib/components/Settings/SettingsField.svelte';
-
 </script>
 
 {#if $isSettingsMenuOpen}
@@ -21,17 +20,17 @@
 		<div class="flex flex-col gap-2">
 			<SettingsField
 				type="checkbox"
-				name="new-tab-shortcuts"
+				name="openShortcutInNewTab"
 				title={$_('settings.new-tab-shortcuts')}
-				bind:checked={$settings['new-tab-shortcuts']}
+				bind:checked={$settings.openShortcutInNewTab}
 			/>
 
 			<SettingsField
 				type="select"
-				name="favicon-provider"
+				name="faviconProvider"
 				title={$_('settings.favicon-provider')}
 				options={config.iconProviders}
-				bind:value={$settings['favicon-provider']}
+				bind:value={$settings.faviconProvider}
 			/>
 
 			<SettingsField
@@ -41,10 +40,9 @@
 				options={$locales}
 				bind:value={$settings['lang']}
 				on:change={() => {
-					loadTranslations($settings.lang)
+					loadTranslations($settings.lang);
 				}}
 			/>
-
 		</div>
 	</div>
 {/if}

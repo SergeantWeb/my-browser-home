@@ -5,7 +5,7 @@ import config from '$lib/config';
 export default {
 	getFaviconUrl: (fullDomain: string) => {
 		const $settings = get(settings);
-		const provider = $settings['favicon-provider'] ?? config.defaultIconProvider;
+		const provider = $settings.faviconProvider ?? config.defaultIconProvider;
 		const domain = fullDomain.replace(/(^\w+:|^)\/\//, '');
 
 		switch (provider) {

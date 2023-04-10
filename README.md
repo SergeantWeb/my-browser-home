@@ -12,22 +12,14 @@ Made with Sveltekit, data stored in localStorage, multilingual.
 - Multilingual.
 
 ### Settings
+
 - Open links in a new tab.
 - Select favicon provider.
-> Available providers :
-`IconsHorse (default)`
-`Google`
-`Duckduckgo`
-`Unavatar`
-`Allesedv`
-`Clearbit`
-`Besticon`
-`Faviconkit`
-`Getfavicon`
+  > Available providers :
+  > `IconsHorse (default)` > `Google` > `Duckduckgo` > `Unavatar` > `Allesedv` > `Clearbit` > `Besticon` > `Faviconkit` > `Getfavicon`
 - Select language.
-> Available languages :
-`English (default)` `French`
-
+  > Available languages :
+  > `English (default)` `French`
 
 ## Installation
 
@@ -48,3 +40,11 @@ Now you will see `My Browser Home` page when you open a new tab.
 - In extension options, add [`https://my-custom-browser-home.vercel.app/`](https://my-custom-browser-home.vercel.app/) in `Redirect URL` and click on `save` button.
 
 Now you will see `My Browser Home` page when you open a new tab or a new window.
+
+
+## Usage
+### Add a new shortcut
+Click on the plus `+` button.
+
+### Edit or remove a shortcut
+Right click on any shortcut to edit or remove it.

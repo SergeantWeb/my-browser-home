@@ -3,47 +3,35 @@
 	import { fade } from 'svelte/transition';
 	import { clickOutside } from '$lib/directives/ClickOutside';
 	import { shortcuts } from '$lib/stores/persistent';
-
-	export let isOpen = false;
-	export let shortcut: App.Shortcut = null;
-	export let index = $shortcuts.length + 1;
-
-	let title: string | null = shortcut?.title ?? null;
-	let link: string | null = shortcut?.link ?? null;
+	import { shortcutEditPopup } from '$lib/stores/states';
 
 	const closePopup = () => {
-		isOpen = false;
+		$shortcutEditPopup = null;
 	};
 
 	const saveShortcut = () => {
 		// Add https:// to the link
-		if (link && link.length > 0 && link.indexOf('http') !== 0) {
-			link = `https://${link}`;
+		if (
+			$shortcutEditPopup?.shortcut &&
+			$shortcutEditPopup?.shortcut?.link &&
+			$shortcutEditPopup?.shortcut?.link.length > 0 &&
+			$shortcutEditPopup?.shortcut?.link.indexOf('http') !== 0
+		) {
+			$shortcutEditPopup.shortcut.link = `https://${$shortcutEditPopup?.shortcut?.link}`;
 		}
 
 		// Prepare shortcut
-		const newShortcut = { title, link };
+		const newShortcut = $shortcutEditPopup?.shortcut;
 
-		// Add or edit shortcut
-		if (typeof shortcut === 'undefined') {
-			$shortcuts.push(newShortcut as never);
-			$shortcuts = $shortcuts;
-		} else {
-			$shortcuts[index] = newShortcut as never;
-		}
+		// Update shortcut
+		$shortcuts[$shortcutEditPopup?.shortcutIndex as number] = newShortcut as never;
 
 		// Close popup
 		closePopup();
 	};
-
-	const removeShortcut = () => {
-		$shortcuts.splice(index, 1);
-		$shortcuts = $shortcuts;
-		closePopup();
-	};
 </script>
 
-{#if isOpen}
+{#if $shortcutEditPopup !== null}
 	<div class="modal modal-open">
 		<div
 			class="modal-box relative p-4"
@@ -53,7 +41,7 @@
 		>
 			<div class="flex items-center justify-between p-2 pt-0 pr-0">
 				<h3 class="text-lg font-bold">
-					{#if shortcut === null}
+					{#if $shortcutEditPopup.shortcut === null}
 						{$_('shortcut.title-add')}
 					{:else}
 						{$_('shortcut.title-edit')}
@@ -65,7 +53,7 @@
 			<div class="flex flex-col gap-2 mt-2">
 				<input
 					type="text"
-					bind:value={title}
+					bind:value={$shortcutEditPopup.shortcut.title}
 					placeholder={$_('shortcut.input-title')}
 					class="input input-bordered w-full"
 					on:keydown={(e) => {
@@ -74,22 +62,17 @@
 				/>
 				<input
 					type="text"
-					bind:value={link}
+					bind:value={$shortcutEditPopup.shortcut.link}
 					placeholder={$_('shortcut.input-link')}
 					class="input input-bordered w-full"
 					on:keydown={(e) => {
 						if (e.key === 'Enter') saveShortcut();
 					}}
 				/>
-				<!-- @TODO <input type="text" placeholder={$_('shortcut.input-icon')} class="input input-bordered w-full" /> -->
+				<!-- @TODO $_('shortcut.input-icon') /> -->
 			</div>
 
 			<div class="modal-action mt-2">
-				{#if shortcut !== null}
-					<button class="btn btn-ghost text-error" on:click={removeShortcut}
-						>{$_('shortcut.remove')}</button
-					>
-				{/if}
 				<button class="btn btn-primary" on:click={saveShortcut}>{$_('shortcut.save')}</button>
 			</div>
 		</div>
