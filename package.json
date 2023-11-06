@@ -35,7 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-auto": "^2.1.0",
-		"daisyui": "^2.51.5"
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"daisyui": "^2.52.0"
 	}
 }
