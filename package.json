@@ -36,6 +36,6 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-auto": "^2.1.1",
-		"daisyui": "^4.0.7"
+		"daisyui": "^4.1.0"
 	}
 }
